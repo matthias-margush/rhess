@@ -1,0 +1,6 @@
+[package]
+name = "rhess"
+version = "0.1.0"
+authors = ["Matthias Margush <matthias.margush@gmail.com>"]
+
+[dependencies]
