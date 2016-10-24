@@ -1,7 +1,20 @@
+#[derive(Copy, Clone, Debug)]
+pub enum Color { Wh, Bl }
 
+#[derive(Copy, Clone, Debug)]
+pub enum Shape { R, Kn, B, K, Q, P }
 
+#[derive(Copy, Clone, Debug)]
+pub struct Piece {
+    pub color: Color,
+    pub shape: Shape
+}
 
-//data Color = Wh | Bl deriving (Read, Show, Eq, Enum, Bounded)
-//data PieceShape = R | Kn | B | K | Q | P  deriving (Read, Show, Eq, Enum, Bounded)
-//data Piece = Piece {pieceColor :: Color,
-//pieceShape :: PieceShape} deriving (Read, Show, Eq)
+pub type Square = Option<Piece>;
+
+#[derive(Copy, Clone, Debug)]
+pub struct Position(pub i8, pub i8);
+
+pub fn sq(color: Color, shape: Shape) -> Square {
+    Some(Piece{ color: color, shape: shape })
+}
